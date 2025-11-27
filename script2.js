@@ -91,11 +91,26 @@ const bmiCalc = function (){
 };
 
 calcBtn.addEventListener("click", ()=>{
-  bmiCalc();
+  nameInput();
 });
 
 containsBtn.addEventListener("click", ()=>{
   bmiCalc();
 });
 
+const fact = [];
+const attempts = [];
+const entryAttempts = 3 - 1;
+let userAttempts;
+
+function nameInput(){
+  if(attempts.length <= entryAttempts){
+    userAttempts = attempts.push(prompt("Enter your name:"));
+    for(i=0; i<attempts.length; i++){
+      console.log(attempts[i]);
+    }
+  }else{
+    console.log("You have reached the maximum number of input!");
+  }
+}
 

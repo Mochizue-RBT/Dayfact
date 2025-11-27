@@ -102,12 +102,18 @@ const fact = [];
 const attempts = [];
 const entryAttempts = 3 - 1;
 let userAttempts;
+const password = "Mochi".toLowerCase();
 
 function nameInput(){
   if(attempts.length <= entryAttempts){
-    userAttempts = attempts.push(prompt("Enter your name:"));
+    userAttempts = attempts.push(prompt("Enter password:").toLowerCase());
     for(i=0; i<attempts.length; i++){
       console.log(attempts[i]);
+    }
+    if(attempts[attempts.length - 1] === password){
+      bmiCalc();
+    }else{
+      console.log("Wrong password!");
     }
   }else{
     console.log("You have reached the maximum number of input!");

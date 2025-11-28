@@ -287,6 +287,15 @@ header{
   width: 100%;
 }
 
+.bmi-result-heading .name{
+  text-transform: uppercase;
+  font-weight: var(--text-weight-bold);
+}
+
+.divider-dot{
+  margin: 0 .5rem;
+}
+
 @media(max-width: 1165px){
   .result-content{
     flex-direction: column;

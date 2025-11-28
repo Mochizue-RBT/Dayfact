@@ -9,9 +9,33 @@ const emptyMessage = document.querySelector(".empty h1");
 const weightDisplay = document.querySelector(".weight-box");
 const heightDisplay = document.querySelector(".height-box");
 const resultDisplay = document.querySelector(".output-box");
+const patientName = document.querySelector(".bmi-result-heading .name");
+const password = "Mochi".toLowerCase();
+let userAttempts;
 let bmiResults = [];
 let weightBase = [];
 let heightBase = [];
+const fact = [];
+let attempts = [];
+const entryAttempts = 3 - 1;
+
+function nameInput(){
+  if(attempts.length <= entryAttempts){
+    userAttempts = attempts.push(prompt("Enter password:").toLowerCase());
+    for(i=0; i<attempts.length; i++){
+      console.log(attempts[i]);
+    }
+    if(attempts[attempts.length - 1] === password){
+      bmiCalc();
+      patientName.textContent = attempts[attempts.length - 1];
+      console.log(patientName)
+    }else{
+      alert("Wrong password!");
+    }
+  }else{
+    alert("You have reached the maximum number of input!");
+  }
+}
 
 const bmiCalc = function (){
   // BMI calculation
@@ -97,26 +121,4 @@ calcBtn.addEventListener("click", ()=>{
 containsBtn.addEventListener("click", ()=>{
   bmiCalc();
 });
-
-const fact = [];
-const attempts = [];
-const entryAttempts = 3 - 1;
-let userAttempts;
-const password = "Mochi".toLowerCase();
-
-function nameInput(){
-  if(attempts.length <= entryAttempts){
-    userAttempts = attempts.push(prompt("Enter password:").toLowerCase());
-    for(i=0; i<attempts.length; i++){
-      console.log(attempts[i]);
-    }
-    if(attempts[attempts.length - 1] === password){
-      bmiCalc();
-    }else{
-      console.log("Wrong password!");
-    }
-  }else{
-    console.log("You have reached the maximum number of input!");
-  }
-}
 

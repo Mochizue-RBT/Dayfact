@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+html{
+  background-color: var(--bg-base);
+}
+
 :root{
   --text-color-base: #fafaf9;
   --text-color-muted: #a8a29e;
@@ -273,6 +277,14 @@ header{
   font-size: var(--text-sm);
   font-weight: var(--text-weight-semi-bold);
   letter-spacing: .2rem;
+}
+
+.empty{
+  padding: 2rem;
+}
+
+.empty h1{
+  width: 100%;
 }
 
 @media(max-width: 1165px){

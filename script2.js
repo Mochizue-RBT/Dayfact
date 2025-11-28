@@ -27,7 +27,6 @@ function nameInput(){
     }
     if(attempts[attempts.length - 1] === password){
       bmiCalc();
-      patientName.textContent = attempts[attempts.length - 1];
       console.log(patientName)
     }else{
       alert("Wrong password!");
@@ -78,6 +77,7 @@ const bmiCalc = function (){
     weightDisplay.textContent = weight;
     heightDisplay.textContent = height;
     resultDisplay.textContent = bmi;
+    patientName.textContent = attempts[attempts.length - 1];
     bmiResults.push(bmi);
     weightBase.push(weight);
     heightBase.push(height);
